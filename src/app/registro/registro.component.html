@@ -1,0 +1,82 @@
+<div class="container">
+    <h2>Registro</h2>
+    
+    <div *ngIf="successMessage" class="alert alert-success">
+        {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <!-- Username -->
+      <div class="form-group">
+        <input type="text" 
+               class="form-control" 
+               formControlName="username"
+               placeholder="Username"
+               [ngClass]="{'is-invalid': registroForm.get('username')?.invalid && registroForm.get('username')?.touched}">
+        <div class="invalid-feedback" *ngIf="registroForm.get('username')?.errors?.['required'] && registroForm.get('username')?.touched">
+          Username es requerido
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <input type="email" 
+               class="form-control" 
+               formControlName="email"
+               placeholder="Email"
+               [ngClass]="{'is-invalid': registroForm.get('email')?.invalid && registroForm.get('email')?.touched}">
+        <div class="invalid-feedback" *ngIf="registroForm.get('email')?.errors?.['required'] && registroForm.get('email')?.touched">
+          Email es requerido
+        </div>
+        <div class="invalid-feedback" *ngIf="registroForm.get('email')?.errors?.['email'] && registroForm.get('email')?.touched">
+          Email inválido
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <input type="password" 
+               class="form-control" 
+               formControlName="password"
+               placeholder="Password"
+               [ngClass]="{'is-invalid': registroForm.get('password')?.invalid && registroForm.get('password')?.touched}">
+        <div class="invalid-feedback" *ngIf="registroForm.get('password')?.errors?.['required'] && registroForm.get('password')?.touched">
+          Password es requerido
+        </div>
+      </div>
+
+      <!-- DNI -->
+      <div class="form-group">
+        <input type="text" 
+               class="form-control" 
+               formControlName="dni"
+               placeholder="DNI"
+               [ngClass]="{'is-invalid': registroForm.get('dni')?.invalid && registroForm.get('dni')?.touched}">
+        <div class="invalid-feedback" *ngIf="registroForm.get('dni')?.errors?.['required'] && registroForm.get('dni')?.touched">
+          DNI es requerido
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" [disabled]="registroForm.invalid">
+          Registrarse
+        </button>
+      </div>
+      
+      <div class="form-group">
+        <button type="button" class="btn btn-danger" (click)="cancelarRegistro()">
+          Cancelar
+        </button>
+      </div>
+      
+      <div class="form-group">
+        <button type="button" class="btn btn-link" routerLink="/login">
+          ¿Ya tienes cuenta? Inicia sesión
+        </button>
+      </div>
+    </form>
+  </div>

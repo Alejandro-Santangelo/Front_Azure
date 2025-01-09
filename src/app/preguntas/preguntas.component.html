@@ -1,0 +1,11 @@
+<div class="container">
+    <button class="back-button" (click)="goBack()">Volver</button>
+    <h1>Preguntas Frecuentes</h1>
+    <div *ngFor="let pregunta of preguntas">
+        <h3>{{ pregunta.titulo }}</h3>
+        <p class="pregunta">{{ pregunta.pregunta }}</p>
+        <div *ngFor="let respuesta of pregunta.respuestas">
+            <p class="respuesta">{{ respuesta }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<nav class="navbar bg-dark navbar-expand-lg m-0 p-1" data-bs-theme="dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" routerLink="">
+      <img src="/logo-biogas.png" alt="logo de loBio" width="65" height="70">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" routerLink="/quienes-somos">Quiénes somos</a>
+        <a class="nav-link" routerLink="/forum">Foro</a>
+        <a class="nav-link" routerLink="/preguntas">Preguntas frecuentes</a>
+        
+        <!-- Menú de Contacto usando Angular Material -->
+        <a mat-button class="nav-link contact-button" [matMenuTriggerFor]="contactMenu">
+          Contacto
+          <mat-icon>expand_more</mat-icon>
+        </a>
+        <mat-menu #contactMenu="matMenu">
+          <a mat-menu-item href="https://wa.me/543548576962" target="_blank" class="whatsapp-item contact-menu-item">
+            <!-- Modificación: Usamos una imagen para el icono de WhatsApp -->
+            <i class="fa fa-whatsapp" style="font-size: 24px; margin-right: 10px;"></i>
+            <span>WhatsApp</span>
+          </a>
+          <a mat-menu-item routerLink="/forum" class="forum-item contact-menu-item">
+            <i class="fa fa-comment" style="font-size: 24px; margin-right: 10px;"></i>
+            <span>Foro</span>
+          </a>
+          <a mat-menu-item href="tel:+543548576962" class="phone-item contact-menu-item">
+            <i class="fa fa-phone" style="font-size: 24px; margin-right: 10px;"></i>
+            <span>Llamar</span>
+          </a>
+
+          <!-- Enlaces para elegir el proveedor de correo -->
+          <a mat-menu-item href="https://mail.google.com/mail/?view=cm&fs=1&to=artesaniaslarustica@gmail.com&su=Consulta&body=Escribe tu mensaje aquí" target="_blank" class="email-item contact-menu-item">
+            <i class="fa fa-envelope" style="font-size: 24px; margin-right: 10px;"></i>
+            <span>Gmail</span>
+          </a>
+          <a mat-menu-item href="https://outlook.live.com/mail/0/deeplink/compose?to=avsanta22@gmail.com&subject=Consulta&body=Escribe tu mensaje aquí" target="_blank" class="email-item contact-menu-item">
+            <i class="fa fa-envelope" style="font-size: 24px; margin-right: 10px;"></i>
+            <span>Outlook</span>
+          </a>
+          
+          <!-- Nuevo: Enlace a Hotmail -->
+          <a mat-menu-item href="https://outlook.live.com/mail/0/deeplink/compose?to=avsanta22@hotmail.com&subject=Consulta&body=Escribe tu mensaje aquí" target="_blank" class="email-item contact-menu-item">
+            <i class="fa fa-envelope" style="font-size: 24px; margin-right: 10px;"></i>
+            <span>Hotmail</span>
+          </a>
+
+          <!-- Nuevo: Enlace a Yahoo -->
+          <a mat-menu-item href="https://mail.yahoo.com/?.src=fpctx&to=avsanta22@yahoo.com&subject=Consulta&body=Escribe tu mensaje aquí" target="_blank" class="email-item contact-menu-item">
+            <i class="fa fa-envelope" style="font-size: 24px; margin-right: 10px;"></i>
+            <span>Yahoo</span>
+          </a>
+        </mat-menu>
+
+        <a class="nav-link" routerLink="registro">Registrarse</a>
+        <a class="nav-link" routerLink="login">Ingresar</a>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,59 @@
+.registros-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.filtros {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mat-mdc-form-field {
+  margin-right: 16px;
+}
+
+.tabla-container {
+  position: relative;
+  min-height: 200px;
+  max-height: 600px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-column-fecha {
+  min-width: 160px;
+}
+
+.mat-column-temperatura,
+.mat-column-presion,
+.mat-column-humedad {
+  min-width: 100px;
+}
+
+.mat-column-observaciones {
+  min-width: 200px;
+}
+
+.mat-column-acciones {
+  width: 100px;
+  text-align: center;
+}
+
+.nuevo-registro-btn {
+  margin-left: auto;
+}

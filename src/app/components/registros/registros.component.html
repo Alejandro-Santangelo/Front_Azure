@@ -1,0 +1,94 @@
+<div class="registros-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Registros del Biodigestor</mat-card-title>
+      <div class="header-actions">
+        <!-- Filtros -->
+        <div class="filtros">
+          <mat-form-field appearance="outline">
+            <mat-label>Fecha Inicio</mat-label>
+            <input matInput [matDatepicker]="pickerInicio" [(ngModel)]="filtroFechaInicio">
+            <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+            <mat-datepicker #pickerInicio></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Fecha Fin</mat-label>
+            <input matInput [matDatepicker]="pickerFin" [(ngModel)]="filtroFechaFin">
+            <mat-datepicker-toggle matSuffix [for]="pickerFin"></mat-datepicker-toggle>
+            <mat-datepicker #pickerFin></mat-datepicker>
+          </mat-form-field>
+
+          <button mat-raised-button color="primary" (click)="aplicarFiltro()">
+            <mat-icon>search</mat-icon>
+            Filtrar
+          </button>
+
+          <button mat-raised-button (click)="limpiarFiltros()">
+            <mat-icon>clear</mat-icon>
+            Limpiar
+          </button>
+        </div>
+
+        <button mat-raised-button color="primary" (click)="nuevoRegistro()" class="nuevo-registro-btn">
+          <mat-icon>add</mat-icon>
+          Nuevo Registro
+        </button>
+      </div>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="mat-elevation-z8 tabla-container">
+        <table mat-table [dataSource]="dataSource" matSort>
+          <!-- Fecha Column -->
+          <ng-container matColumnDef="fecha">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </th>
+            <td mat-cell *matCellDef="let registro"> {{registro.fecha | date:'medium'}} </td>
+          </ng-container>
+
+          <!-- Temperatura Column -->
+          <ng-container matColumnDef="temperatura">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Temperatura </th>
+            <td mat-cell *matCellDef="let registro"> {{registro.temperatura}}°C </td>
+          </ng-container>
+
+          <!-- Presión Column -->
+          <ng-container matColumnDef="presion">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Presión </th>
+            <td mat-cell *matCellDef="let registro"> {{registro.presion}} kPa </td>
+          </ng-container>
+
+          <!-- Humedad Column -->
+          <ng-container matColumnDef="humedad">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Humedad </th>
+            <td mat-cell *matCellDef="let registro"> {{registro.humedad}}% </td>
+          </ng-container>
+
+          <!-- Observaciones Column -->
+          <ng-container matColumnDef="observaciones">
+            <th mat-header-cell *matHeaderCellDef> Observaciones </th>
+            <td mat-cell *matCellDef="let registro"> {{registro.observaciones}} </td>
+          </ng-container>
+
+          <!-- Acciones Column -->
+          <ng-container matColumnDef="acciones">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let registro">
+              <button mat-icon-button color="primary" (click)="editarRegistro(registro)" matTooltip="Editar">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="eliminarRegistro(registro)" matTooltip="Eliminar">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Seleccionar página de registros"></mat-paginator>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

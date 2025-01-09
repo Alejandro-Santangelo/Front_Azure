@@ -1,0 +1,97 @@
+<div class="testeo-sensores-container">
+  <div class="cards-container" style="display: flex; flex-direction: row;">
+    <!-- Card de Testeo -->
+    <mat-card class="testeo-card" style="margin-right: 20px;">
+      <mat-card-header>
+        <mat-card-title>Testeo de Sensores</mat-card-title>
+      </mat-card-header>
+      
+      <mat-card-content>
+        <div class="form-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Tipo de Sensor</mat-label>
+            <mat-select [(ngModel)]="tipoSensor">
+              <mat-option value="temperatura">Temperatura</mat-option>
+              <mat-option value="humedad">Humedad</mat-option>
+              <mat-option value="presion">Presión</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="id-fields">
+            <mat-form-field appearance="outline">
+              <mat-label>ID Sensor</mat-label>
+              <input matInput type="number" [(ngModel)]="idSensor" min="1">
+              <mat-hint>ID único</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>ID Biodigestor</mat-label>
+              <input matInput type="number" [(ngModel)]="idBiodigestor" min="1">
+              <mat-hint>ID único</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Valor ({{unidad}})</mat-label>
+            <input matInput type="number" [(ngModel)]="valorLectura" 
+                   [min]="rangoActual.min" [max]="rangoActual.max"
+                   [placeholder]="'Rango: ' + rangoActual.min + ' - ' + rangoActual.max">
+            <mat-hint>Normal: {{rangoActual.normal.texto}}</mat-hint>
+          </mat-form-field>
+
+          <div class="button-container">
+            <button mat-raised-button color="primary" (click)="testearSensor()" 
+                    [disabled]="!valorLectura">
+              <mat-icon>sensors</mat-icon>
+              Testear Sensor
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <!-- Card de Rangos -->
+    <mat-card class="ranges-card">
+      <mat-card-header>
+        <mat-card-title>
+          <mat-icon [ngSwitch]="tipoSensor">
+            <ng-container *ngSwitchCase="'temperatura'">thermostat</ng-container>
+            <ng-container *ngSwitchCase="'humedad'">water_drop</ng-container>
+            <ng-container *ngSwitchCase="'presion'">speed</ng-container>
+          </mat-icon>
+          Rangos de {{tipoSensor | titlecase}}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="ranges-grid">
+          <div class="range-item">
+            <h3>
+              <mat-icon class="success-icon">check_circle</mat-icon>
+              Normal
+            </h3>
+            <p>{{rangoActual.normal.texto}}</p>
+            <p class="range-description">Óptimo</p>
+          </div>
+
+          <div class="range-item">
+            <h3>
+              <mat-icon class="warning-icon">warning</mat-icon>
+              Alerta
+            </h3>
+            <p>{{rangoActual.alerta.texto}}</p>
+            <p class="range-description">Atención</p>
+          </div>
+
+          <div class="range-item">
+            <h3>
+              <mat-icon class="error-icon">error</mat-icon>
+              Alarma
+            </h3>
+            <p>{{rangoActual.alarma.texto}}</p>
+            <p class="range-description">¡Urgente!</p>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

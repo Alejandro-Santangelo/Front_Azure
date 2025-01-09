@@ -1,0 +1,148 @@
+.testeo-sensores-container {
+  padding: 16px;
+  margin: 0 auto;
+}
+
+.cards-container {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.testeo-card {
+  flex: 0 0 400px;
+}
+
+.ranges-card {
+  flex: 0 0 400px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.id-fields {
+  display: flex;
+  gap: 12px;
+}
+
+.id-fields mat-form-field {
+  flex: 1;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+button {
+  width: 100%;
+  max-width: 200px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+button mat-icon {
+  margin-right: 8px;
+}
+
+.ranges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.range-item {
+  text-align: center;
+  padding: 8px;
+}
+
+.range-item h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0 0 8px 0;
+  font-size: 0.9rem;
+}
+
+.range-item p {
+  margin: 5px 0;
+  white-space: pre-line;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.range-description {
+  color: #666;
+  font-size: 0.8rem !important;
+}
+
+.success-icon {
+  color: #4caf50;
+}
+
+.warning-icon {
+  color: #ff9800;
+}
+
+.error-icon {
+  color: #f44336;
+}
+
+mat-card-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+mat-card-title mat-icon {
+  color: #1976d2;
+}
+
+:host ::ng-deep .snackbar-success {
+  background-color: #4caf50;
+  color: white;
+}
+
+:host ::ng-deep .snackbar-error {
+  background-color: #f44336;
+  color: white;
+}
+
+:host ::ng-deep .snackbar-warning {
+  background-color: #ff9800;
+  color: white;
+}
+
+:host ::ng-deep .mat-mdc-snack-bar-action {
+  color: white;
+}
+
+:host ::ng-deep .snackbar-error {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+:host ::ng-deep .snackbar-warning {
+  background-color: #ff9800 !important;
+  color: white !important;
+}
+
+:host ::ng-deep .snackbar-success {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+:host ::ng-deep .mat-snack-bar-container {
+  margin: 0 !important;
+}

@@ -1,0 +1,130 @@
+/* Fondo con la imagen y efecto */
+.login-container {
+    background-image: url('../assets/images/con_lamparita.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor del formulario con efecto de desenfoque */
+.form-wrapper {
+    margin-left: 15%;
+    transform: translateY(-2cm);
+    /* Puedes ajustar márgenes según necesites */
+}
+
+.login-card {
+    /* Mismo aspecto que el registro */
+    background-color: rgba(255, 255, 255, 0.212);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 30px;
+    width: 100%;
+}
+
+/* Título */
+h2 {
+    color: #000000;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Etiquetas */
+label {
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Inputs */
+.form-control {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 8px 12px;
+    height: 45px;
+    background-color: white;
+    color: #000000;
+    margin-bottom: 6px;
+    font-size: 0.9em;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Botón principal */
+.btn-success {
+    background-color: #28a745 !important; /* Verde */
+    border: 2px solid #800020 !important; /* Bordo */
+    width: 100%;
+    height: 45px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838 !important; /* Verde oscuro */
+    border-color: #800020 !important;     /* Bordo */
+}
+
+/* Botón Cancelar */
+.btn-warning {
+    background-color: #ffc107 !important; /* Naranja */
+    border: 2px solid #800020 !important; /* Bordo */
+    color: white !important;
+    width: 100%;
+    height: 45px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0.8; /* Opacidad */
+}
+
+.btn-warning:hover {
+    background-color: #e0a800 !important; /* Naranja oscuro */
+    border-color: #800020 !important;     /* Bordo */
+    opacity: 1; /* Sin opacidad al pasar el ratón */
+}
+
+/* Enlaces */
+.btn-link {
+    color: #000 !important; /* Color negro */
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #026b0e;
+    text-decoration: underline;
+}
+
+/* Estilos de error y alertas */
+.text-danger {
+    color: #dc3545 !important;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .form-wrapper {
+        transform: translateY(0);
+        margin-left: 5%;
+    }
+    .login-card {
+        margin: 15px;
+    }
+}

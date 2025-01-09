@@ -1,0 +1,105 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-nav .nav-link {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-left: .8rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #159215;
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 17px;
+  padding: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Estilos para el botón del menú */
+.contact-button {
+  height: auto !important;
+  line-height: normal !important;
+  padding: 15px !important;
+}
+
+/* Estilos para los íconos en el menú */
+mat-icon {
+  margin-right: 8px;
+  vertical-align: middle;
+  height: 20px;
+  width: 20px;
+}
+
+/* Estilos para los items del menú */
+::ng-deep .mat-mdc-menu-panel {
+  background-color: #212529 !important;
+}
+
+::ng-deep .mat-mdc-menu-item {
+  color: white !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+::ng-deep .mat-mdc-menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+::ng-deep .mat-mdc-menu-item .mat-icon {
+  color: white !important;
+  margin-right: 8px !important;
+}
+
+/* Estilos para los items del menú de contacto */
+.contact-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* WhatsApp */
+.whatsapp-item {
+  color: #25D366 !important;
+}
+.whatsapp-item mat-icon {
+  color: #25D366;
+}
+
+/* Foro */
+.forum-item {
+  color: #1976d2 !important;
+}
+.forum-item mat-icon {
+  color: #1976d2;
+}
+
+/* Email */
+.email-item {
+  color: #EA4335 !important;
+}
+.email-item mat-icon {
+  color: #EA4335;
+}
+
+/* Teléfono */
+.phone-item {
+  color: #34B7F1 !important;
+}
+.phone-item mat-icon {
+  color: #34B7F1;
+}
+
+/* Efecto hover */
+.mat-mdc-menu-item:hover {
+  opacity: 0.8;
+}
